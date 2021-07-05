@@ -1,0 +1,114 @@
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color:darkslategrey;
+}
+h1{
+    align-self: center;
+    
+}
+#todo{
+    align-self: center;
+    display: flex;
+    background-color: white;
+    height:85vh;
+    width:50vw;
+    flex-direction:column;
+}
+.details{
+    height:10vh;
+    border-top: 1px solid black;
+
+}
+#description{
+    display:flex;
+    flex-direction: column;
+    
+}
+#calender{
+    border-bottom: 0.5px solid darkslategrey;
+    border-left: 0.5px solid darkslategrey;
+    display:flex;
+    flex-direction: column;
+}
+#Category{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    display:flex;
+    flex-direction: column;
+}
+td{
+    padding: 0;
+    width:50%;
+}
+#TaskManager{
+    display: flex;
+    height:15vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    color:white
+}
+#add_task{
+    display: flex;
+    background-color: rgb(114, 95, 95);
+    width:15vw;
+    flex-direction: row;
+
+}
+#delete_tasks{
+    display: flex;
+    background-color: red;
+    width:15vw;
+}
+#plus{
+    align-self: center;
+    padding-left: 2vw;
+}
+.task_padding{
+    padding-left:1vw;
+    
+}
+#delete{
+    align-self: center;
+    padding-left: 1.5vw;
+}
+li{
+    border-top:1px solid black;
+    color:black;
+}
+ul{
+    list-style-type:none;
+    padding:0;
+}
+form{
+    align-self: center;
+    display: flex;
+    flex-direction:column;
+    width:50vw;
+}
+#description input{
+    background-color: white;
+    border: 0;
+   height: 7vh;
+}
+h5{
+    margin:0;
+}
+#category select{
+    background-color: white;
+    border: 0;
+   height: 7vh;
+   cursor:pointer;
+   
+}
+#calender input{
+    border:0;
+    height:7vh;
+    cursor: pointer;
+}
+button{
+    background-color:rgb(114, 95, 95);
+    border:0;
+}

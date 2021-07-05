@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>TODO-App</title>
+        <script src="https://kit.fontawesome.com/1981abd42b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div id="todo">
+            <h1> TODO App </h1>
+            <form action="/create_event/" method="Post">
+                <table>
+                    <tr>
+                        <td colspan="2"> 
+                            <div id ="description" class="details">
+                                <h5>
+                                    DESCRIPTION
+                                </h5>
+                                <input type="text" name="description" placeholder="what do you need to do ? " required>
+                            </div>
+                        </td>
+                    </tr>
+                        <td>
+                            <div id="Category" class="details">
+                                <h5>
+                                    Category
+                                </h5>
+                                <select name="Category" placeholder="Select a Category">
+                                    <option value="Personal">Personal</option>
+                                    <option value="Work">Work</option>
+                                    <option value="school">School</option>
+                                    <option value="cleaning">Cleaning</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div id= "calender" class="details">
+                                <h5>Due date</h5>
+                                <input type="date"  name="date">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            <div id="TaskManager">
+                <div id="add_task">
+                   <h3><i id="plus" class="fas fa-plus"></i></h3>
+                   
+                   <button class="task_padding" type="submit">
+                    <h3 >ADD TASK</h3>
+                    </button>
+                </div>
+                <div id="delete_tasks">
+                    <i id="delete" class="fas fa-trash-alt"></i>
+                    <h3 class="task_padding">DELETE TASK</h3>
+                </div>
+            </div>
+        </form>
+            <ul>
+                <li> 
+                    <h3>Tasks</h3>
+                </li>
+            </ul>
+        </div>
+        
+        
+
+    </body>
+</html>
