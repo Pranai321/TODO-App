@@ -15,7 +15,7 @@
                                 <h5>
                                     DESCRIPTION
                                 </h5>
-                                <input type="text" name="description" placeholder="what do you need to do ? " required>
+                                <input class="outline" type="text" name="description" placeholder="what do you need to do ? " required>
                             </div>
                         </td>
                     </tr>
@@ -24,19 +24,19 @@
                                 <h5>
                                     Category
                                 </h5>
-                                <select name="Category" placeholder="Select a Category">
-                                    <option value="Personal">Personal</option>
-                                    <option value="Work">Work</option>
-                                    <option value="school">School</option>
-                                    <option value="cleaning">Cleaning</option>
-                                    <option value="others">Others</option>
+                                <select id="select" class="outline" name="category">
+                                    <option  value="Personal">Personal</option>
+                                    <option  value="Work">Work</option>
+                                    <option  value="school">School</option>
+                                    <option  value="cleaning">Cleaning</option>
+                                    <option  value="others">Others</option>
                                 </select>
                             </div>
                         </td>
                         <td>
                             <div id= "calender" class="details">
                                 <h5>Due date</h5>
-                                <input type="date"  name="date">
+                                <input id= "date" class="outline" type="date"  name="date">
                             </div>
                         </td>
                     </tr>
@@ -49,20 +49,18 @@
                     <h3 >ADD TASK</h3>
                     </button>
                 </div>
-                <div id="delete_tasks">
-                    <i id="delete" class="fas fa-trash-alt"></i>
-                    <h3 class="task_padding">DELETE TASK</h3>
-                </div>
             </div>
         </form>
-            <ul>
-                <li> 
-                    <h3>Tasks</h3>
-                </li>
-            </ul>
+            <form action="/delete_event/" method="POST" >
+                
+                <% for(var i of events) {%>
+                    <input type="checkbox" name="id" value="<%= i._id %>" >
+                    <h4 class="eventlist"><%=i.description %></h4>
+                    <h4 class="eventlist"><%=i.date %></h4>
+                <%} %>
+                <button type="submit">Delete_Task</button>
+            </form>
         </div>
-        
-        
-
+     <script type="text/javascript" src="/js/home.js"></script>
     </body>
 </html>
