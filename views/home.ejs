@@ -1,66 +1,81 @@
 <html>
-    <head>
-        <title>TODO-App</title>
-        <script src="https://kit.fontawesome.com/1981abd42b.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/home.css">
-    </head>
-    <body>
-        <div id="todo">
-            <h1> TODO App </h1>
-            <form action="/create_event/" method="Post">
-                <table>
-                    <tr>
-                        <td colspan="2"> 
-                            <div id ="description" class="details">
-                                <h5>
-                                    DESCRIPTION
-                                </h5>
-                                <input class="outline" type="text" name="description" placeholder="what do you need to do ? " required>
-                            </div>
-                        </td>
-                    </tr>
-                        <td>
-                            <div id="Category" class="details">
-                                <h5>
-                                    Category
-                                </h5>
-                                <select id="select" class="outline" name="category">
-                                    <option  value="Personal">Personal</option>
-                                    <option  value="Work">Work</option>
-                                    <option  value="school">School</option>
-                                    <option  value="cleaning">Cleaning</option>
-                                    <option  value="others">Others</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td>
-                            <div id= "calender" class="details">
-                                <h5>Due date</h5>
-                                <input id= "date" class="outline" type="date"  name="date">
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            <div id="TaskManager">
-                <div id="add_task">
-                   <h3><i id="plus" class="fas fa-plus"></i></h3>
-                   
-                   <button class="task_padding" type="submit">
-                    <h3 >ADD TASK</h3>
-                    </button>
+  <head>
+    <title>TODO-App</title>
+      <!-- imported fontawesome to use icons -->
+      <script src="https://kit.fontawesome.com/1981abd42b.js" crossorigin="anonymous"></script>
+      <!-- imported styling folder -->
+      <link rel="stylesheet" href="/css/home.css">
+  </head>
+   <body>
+      <!-- div of TODO_App -->
+      <div id="todo">
+        <h1> TODO App </h1>
+        <!-- form to get all the details to create an event -->
+        <form action="/create_event/" method="Post">
+          <table>
+            <tr>                     
+              <td colspan="2"> 
+                <div id ="description" class="details">
+                  <h5>  DESCRIPTION  </h5>
+                  <input class="outline" type="text" name="description" placeholder="what do you need to do ? " required>
                 </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div id="Category" class="details">
+                  <h5> Category  </h5>
+                  <select id="select" class="outline" name="category">
+                    <option  value="Personal">Personal</option>
+                    <option  value="Work">Work</option>
+                    <option  value="school">School</option>
+                    <option  value="cleaning">Cleaning</option>
+                    <option  value="others">Others</option>
+                  </select>                 
+                </div>
+              </td>
+              <td>
+                <div id= "calender" class="details">
+                  <h5>Due date</h5>
+                  <input id= "date" class="outline" type="date"  name="date">
+                </div>
+              </td>
+            </tr>
+          </table>
+                 <!-- adds task -->
+          <div id="TaskManager">
+            <div id="add_task">
+              <h3><i id="plus" class="fas fa-plus"></i></h3>               
+              <button class="task_padding" type="submit">
+                <h3 >ADD TASK</h3>
+              </button>
             </div>
+          </div>
         </form>
-            <form action="/delete_event/" method="POST" >
-                
-                <% for(var i of events) {%>
-                    <input type="checkbox" name="id" value="<%= i._id %>" >
-                    <h4 class="eventlist"><%=i.description %></h4>
-                    <h4 class="eventlist"><%=i.date %></h4>
-                <%} %>
-                <button type="submit">Delete_Task</button>
-            </form>
-        </div>
+            <!-- Deleting_A_Task -->
+        <form id="delete_form" action="/delete_event/" method="POST" >       
+          <% for(var i of events) {%>
+            <div id="event_bar">
+              <input id="checkbox" type="checkbox" name="id" value="<%= i._id %>">
+              <div id="spacing">
+                <h4 class="eventlist"><%=i.description %></h4>
+                <div id="date">
+                  <i class="fas fa-calendar-alt"></i>
+                  <h4 class="eventlist"><%=i.date %></h4>
+                </div>    
+              </div>
+                <div id="category_bar">
+                  <h2> <%=i.category %> </h2>
+                </div>   
+            </div>
+          <%} %>
+          <!-- delete button -->
+          <button id="delete_tasks" type="submit">
+            <i class="fas fa-trash"></i>
+              <h3>DELETE_TASK</h3> 
+          </button>
+        </form>
+     </div>
      <script type="text/javascript" src="/js/home.js"></script>
     </body>
 </html>

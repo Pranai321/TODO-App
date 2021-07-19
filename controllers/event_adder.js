@@ -1,5 +1,7 @@
+//importing the schema
 const eventNames=require('../models/events');
 
+//adding the events into the database
 module.exports.event=function(req,res){
     // console.log(req.body);
     eventNames.create({

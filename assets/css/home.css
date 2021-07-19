@@ -15,6 +15,7 @@ h1{
     height:85vh;
     width:50vw;
     flex-direction:column;
+    position:relative;
 }
 .details{
     height:10vh;
@@ -46,21 +47,29 @@ td{
     display: flex;
     height:15vh;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    color:white
+    color:white;
+    justify-content: flex-start;
 }
 #add_task{
     display: flex;
     background-color: rgb(114, 95, 95);
     width:15vw;
+    height:10vh;
     flex-direction: row;
-
+    margin-top:2%;
+    margin-left:18%;
 }
+
 #delete_tasks{
-    display: flex;
     background-color: red;
     width:15vw;
+    height:10vh;
+    position:absolute;
+    right:10vw;
+    top:35.6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 #plus{
     align-self: center;
@@ -116,7 +125,6 @@ button{
     margin:0;
     color:slategrey;
     font-family:cursive;
-    margin-left:2vw;
 }
 #eventlistdiv{
     padding: 5px;
@@ -150,4 +158,46 @@ li{
 }
 #marker{
     color:blue;
+}
+#event_bar{
+    display: flex;
+    position: relative;
+    margin-top:2vh;
+    border-bottom: 1px double black;
+}
+#checkbox{
+    margin-left:2vw;
+}
+#delete_form{
+    border-top: 2px solid black;
+}
+#category_bar{
+    position: absolute;
+    height:6vh;
+    width: 7vw;
+    background-color: red;
+    right:5vw;
+    bottom: 0.8vh;
+    text-align: center;
+    border-radius: 12%;
+}
+#category_bar h2{
+    margin: 0;
+    margin-top: 1vh;
+    color:white;
+    font-weight: lighter;
+    font-family:serif;
+
+}
+#delete_tasks h3{
+    margin:0;
+}
+#spacing{
+    margin-left: 2vw;
+}
+#date{
+    display: flex;
+}
+#date h4{
+    margin-left:1vw;
 }
